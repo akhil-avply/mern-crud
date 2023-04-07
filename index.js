@@ -17,12 +17,6 @@ app.use(morgan("tiny"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use(express.static(path.join(__dirname, 'build')));
-
-app.get('/', function (req, res) {
-  console.log(__dirname)
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 
 app.use("/api/", BookApi);
 
